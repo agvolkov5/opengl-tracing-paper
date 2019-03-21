@@ -1,0 +1,204 @@
+@font-face {
+	font-family: "San Francisco";
+	font-weight: 400;
+	src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+@font-face {
+	font-family: "San Francisco Bold";
+	font-weight: 800;
+	src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "San Francisco", arial;
+}
+
+body {
+	overflow: hidden;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.wrap {
+	display: flex;
+	flex-direction: column;
+}
+
+.horizontal {
+	width: 74.5vw;
+	height: 5vh;
+	overflow: hidden;
+
+	box-sizing: border-box;
+
+	padding-top: 1vh;
+}
+
+.vertical {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 3vw;
+	height: 95vh;
+}
+
+.vertical, .horizontal {
+	font-size: 2vh;
+	text-align: center;
+	color: #d1d1d1;
+}
+
+.workspace {
+	z-index: 3;
+	position: relative;
+	width: 74.5vw;
+	height: 95vh;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: center;
+}
+
+.backgr {
+	z-index: 1;
+
+	position: absolute;
+
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	filter: grayscale(50%) opacity(50%);
+
+	background-color: #f2f2f2 !important;
+	background-size: contain !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important
+}
+
+.interlayer {
+	z-index: 2;
+
+	width: 100%;
+	height: 100%;
+}
+
+#workspace {
+	z-index: 4;
+	position: absolute;
+
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	margin: auto;
+
+	width: 100%;
+	height: 100%;
+
+	filter: none;
+	cursor: crosshair;
+}
+
+#points > .point {
+	/*fill: #b0b0b0;*/
+	fill: black;
+	stroke: none;
+
+	transition: all 0.2s ease-out 0s;
+}
+
+#points > .point.active {
+	fill: #007aff;
+}
+
+#points > .point.hover {
+	fill: #ff3b30;
+	r: 8;
+
+	transition: all 0.2s ease-out 0s;
+}
+
+#points > .point:hover {
+	fill: #ff3b30;
+}
+
+#lines > .line {
+	/*stroke: #b0b0b0;*/
+	stroke: black;
+	stroke-width: 2
+}
+
+.output {
+	box-sizing: border-box;
+
+	overflow-y: auto;
+
+	width: 21.3vw;
+	height: 100vh;
+	padding: 1vh 1vw;
+
+	font-size: 1vw;
+	color: #707070;
+}
+
+.button {
+	box-sizing: border-box;
+	margin-bottom: 0.5vw;
+	padding: 0.8vh 0;
+
+	width: 17vw;
+
+	font-family: "San Francisco", arial;
+	font-weight: 400;
+	font-size: 1.1vw;
+	text-align: center;
+	color: white;
+	background: black;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.coordinates {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.coordinates > div {
+	padding: 0.12vh 0.52vw;
+	margin: 0.3vw 0.1vw;
+	border-radius: 4px;
+
+	transition: all 0.3s ease-in 0s;
+}
+
+.coordinates > div:hover, .coordinates > div.hover {
+	background: #ff3b30;
+	color: white;
+
+	transition: all 0.1s ease-out 0s;
+	transform: scale(1.2);
+}
+
+.rotated {
+	transform: rotate(-90deg);
+	position: absolute;
+	text-align: center;
+	padding-bottom: 1vh;
+}
+
+#fitting {
+	/*display: none;*/
+}

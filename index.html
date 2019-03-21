@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OpenGL Coordinates Generator</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="coordgenerator.css">
+		<meta name="viewport" content="width=device-width,user-scalable=no" />
+		<meta name="author" content="Alexander Volkov">
+
+		<meta property="og:title" content="OpenGL Coordinates Generator" />
+		<meta property="og:description" content="Enjoy with Algoritmicheskimi Osnovami Obraboti Izobrajeniy!" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://bigpicker.org/public/aooi/coordgenerator.html" />
+		<meta property="og:image" content="https://media-market.edmodo.com/media/public/562fea6c536b1be795a5689ae5999de51888701f.jpeg" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="wrap" id="wrap" oncontextmenu="return false">
+				<div class="workspace" id="workspaceParent">
+					<div class="interlayer" id="interlayer">
+						<svg id="workspace" xmlns="http://www.w3.org/2000/svg">
+							<g id="lines"></g>
+							<g id="points"></g>
+						</svg>
+						<div class="backgr" id="backgr"></div>
+					</div>
+				</div>
+				<div class="horizontal">
+					<span class="value" id="width">1024</span> px
+				</div>
+			</div>
+			<div class="vertical">
+				<div class="rotated">
+					<span class="value" id="height">920</span> px
+				</div>
+			</div>
+			<div class="output">
+				<div class="button" onclick="document.getElementById('files').click()">Set custom image</div>
+				<div class="coordinates" id="coordinates">
+				</div>
+			</div>
+		</div>
+		<img src id="fitting">
+		<input type="file" id="files" name="files[]" style="display:none" />
+		<script type="text/javascript" src="coordgenerator.js"></script>
+
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+		    (function (d, w, c) {
+		        (w[c] = w[c] || []).push(function() {
+		            try {
+		                w.yaCounter50261011 = new Ya.Metrika2({
+		                    id:50261011,
+		                    clickmap:true,
+		                    trackLinks:true,
+		                    accurateTrackBounce:true
+		                });
+		            } catch(e) { }
+		        });
+
+		        var n = d.getElementsByTagName("script")[0],
+		            s = d.createElement("script"),
+		            f = function () { n.parentNode.insertBefore(s, n); };
+		        s.type = "text/javascript";
+		        s.async = true;
+		        s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+		        if (w.opera == "[object Opera]") {
+		            d.addEventListener("DOMContentLoaded", f, false);
+		        } else { f(); }
+		    })(document, window, "yandex_metrika_callbacks2");
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/50261011" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</body>
+</html>
